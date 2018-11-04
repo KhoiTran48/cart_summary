@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Iphone 7",
+      "desc": "Iphone 7",
+      "price": 10000,
+      "status": true
+    },
+    {
+      "id": "2",
+      "name": "Sam Sung S6",
+      "desc": "Sam Sung S6",
+      "price": 10000,
+      "status": false
+    },
+    {
+      "id": "3",
+      "name": "Iphone 6",
+      "desc": "Iphone 6",
+      "price": 10000,
+      "status": false
+    },
+    {
+      "id": "ni1h2jG",
+      "name": "eee",
+      "desc": "ee",
+      "price": "123",
+      "status": true
+    },
+    {
+      "id": "dAqWVK~",
+      "name": "3",
+      "desc": "4",
+      "price": "5",
+      "status": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
