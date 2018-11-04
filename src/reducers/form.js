@@ -25,8 +25,3 @@ const form=(state=initialState, action)=>{
 }
 
 export default form;
-
-var a={};
-if(Object.keys(a).length === 0){
-    console.log('empty')
-}

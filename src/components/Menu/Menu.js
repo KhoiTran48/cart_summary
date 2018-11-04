@@ -37,7 +37,7 @@ class Menu extends Component {
   render() {
     return (
         <div className="navbar">
-          <a className="navbar-brand" href="#">Call API</a>
+          {/* <a className="navbar-brand" >Call API</a> */}
           <ul className="nav navbar-nav">
             {this.showMenus(menus)}
           </ul>
