@@ -6,3 +6,6 @@ export const CHANGE_INPUT="CHANGE_INPUT";
 export const SUBMIT_FORM_ADD="SUBMIT_FORM_ADD";
 
 export const SUBMIT_FORM_EDIT="SUBMIT_FORM_EDIT";
+export const RESET_FORM="RESET_FORM";
+
+export const FETCH_FORM="FETCH_FORM";

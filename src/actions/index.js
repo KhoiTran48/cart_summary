@@ -4,7 +4,7 @@ import callApi from './../utils/CallAPI';
 export const FETCH_PRODUCT_REQUEST=()=>{
     return (dispatch)=>{
         return callApi('GET', 'products', null).then(res=>{
-            dispatch(FETCH_PRODUCT(res.data))
+                dispatch(FETCH_PRODUCT(res.data))
         })
     }
 }
@@ -45,4 +45,28 @@ export const DELETE=(id)=>{
             dispatch(FETCH_PRODUCT_REQUEST());
         })
     }
+}
+
+export const RESET_FORM=()=>{
+    return {
+        type:Types.RESET_FORM
+    }
+}
+
+export const FETCH_FORM_REQUEST=(id)=>{
+    return (dispatch)=>{
+        return callApi('GET', `products/${id}`, null).then(res=>{
+                dispatch(FETCH_FORM(res.data))
+        }).catch(err=>{
+            console.log('err',err);
+        })
+    }
+}
+
+export const FETCH_FORM=(dataForm)=>{
+    return{
+        type:Types.FETCH_FORM,
+        dataForm
+    }
+    
 }

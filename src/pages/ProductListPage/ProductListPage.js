@@ -5,10 +5,11 @@ import ProductList from './../../components/ProductList/ProductList'
 
 import {connect} from 'react-redux';
 import {FETCH_PRODUCT_REQUEST} from './../../actions/index';
+import {DELETE} from './../../actions/index';
 
 class ProductListPage extends Component {
     
-    componentDidMount(){
+    componentWillMount(){
         this.props.onFetchProducts();
     }
     render() {
@@ -21,6 +22,7 @@ class ProductListPage extends Component {
             );
     }
     showProduct=(products)=>{
+        var {onDeleteProduct}=this.props;
         var result=null;
         if(products.length>0){
             result=products.map((item, index)=>{
@@ -28,6 +30,7 @@ class ProductListPage extends Component {
                         key={index}
                         item={item}
                         index={index + 1}
+                        onDeleteProduct={onDeleteProduct}
                         />
             })
         }
@@ -45,6 +48,9 @@ const mapDispatchToProps=(dispatch, props)=>{
     return {
         onFetchProducts:()=>{
             dispatch(FETCH_PRODUCT_REQUEST())
+        },
+        onDeleteProduct:(id)=>{
+            dispatch(DELETE(id))
         }
     }
 }

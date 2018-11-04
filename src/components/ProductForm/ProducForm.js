@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
 class ProductForm extends Component {
+    componentWillMount(){
+        var {match, onResetForm}=this.props;
+        if(match && match.params.id){
+            this.props.onFetchForm(match.params.id);
+        }else{
+            onResetForm();
+        }
+        
+    }
     changeInput=(event)=>{
         var target=event.target;
         this.props.onChangeInput({
@@ -9,9 +18,10 @@ class ProductForm extends Component {
     }
     onSubmit=(event)=>{
         event.preventDefault();
-        var {form, onSubmitForm, history}=this.props;
+        var {form, onSubmitForm, history, onResetForm}=this.props;
         onSubmitForm(form);
         history.goBack();
+        // onResetForm();
     }
     render() {
         var {form}=this.props;
